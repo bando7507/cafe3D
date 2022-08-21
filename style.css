@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+:root {
+
+    --header-height: 3.5rem;
+    --first-color: #fca4a6;
+    --first-color-dark: #c1576a;
+    --first-color-darken: #a83e51;
+    --withe-color: #fcf8f8;
+
+
+    --body-font: 'Poppins'sans-serif;
+    --big-font-size: 2.5rem;
+    --normal-font-size: .938rem;
+
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+
+    :root {
+
+        --big-font-size: 5rem;
+        --normal-font-size: 1rem
+    }
+}
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+ul,
+p,
+h2 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+
+.bd-grid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    width: 100%;
+    background-color: var(--first-color);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        padding: 3.5rem 1.5rem 0;
+        width: 70%;
+        height: 100%;
+        background: rgba(225, 255, 255, .3);
+        backdrop-filter: blur(10px);
+        transition: .3s;
+    }
+}
+
+.show{
+    right: 0;
+}
+
+.nav__close {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__item
+{
+    margin-bottom: 2rem;
+}
+
+.nav__item, .nav__link, .nav__close, .nav__toggle{
+    color: var(--withe-color);
+}
+
+.nav__link:hover{
+    color: var(--first-color-dark);
+}
+
+
+.nav__toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
